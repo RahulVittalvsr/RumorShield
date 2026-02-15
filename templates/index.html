@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RumorShield</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🛡 RumorShield</h1>
+        <p>AI-Powered Fake News Detector</p>
+        
+        <form method="POST">
+            <textarea name="news" placeholder="Paste your message here to check..." required></textarea>
+            <br>
+            <button type="submit">Analyze Message</button>
+        </form>
+
+        {% if result %}
+        <div class="result {{ 'fake' if 'Fake' in result else 'real' }}">
+            <h2>{{ result }}</h2>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
